@@ -125,6 +125,11 @@ body {
               inset 0px 0px 2px 1px rgba(255,255,255,.2);
 }
 
+.btn__light.rotateHue {
+  -webkit-animation: rotateHue 10s infinite;
+          animation: rotateHue 10s infinite;
+}
+
 .btn__outer-ring {
   position: absolute;
   width: 125%;
@@ -200,5 +205,29 @@ img {
 @media only screen and (min-width: 1280px) {
   .container {
     max-width: var(--xl);
+  }
+}
+
+@-webkit-keyframes rotateHue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rotateHue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
   }
 }
