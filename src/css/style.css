@@ -66,20 +66,25 @@ body {
               0px 43px 35px -20px rgb(0 0 0 / 20%);
   transition: box-shadow var(--smooth);
   cursor: pointer;
-  /* background-color: var(--gray-500); */
+}
+
+.btn:active .btn__mask, .btn.pressed .btn__mask {
+  -webkit-filter: brightness(.8);
+          filter: brightness(.8);
 }
 
 .btn.dark .btn__mask {
-  -webkit-filter: brightness(.55);
-          filter: brightness(.55);
+  -webkit-filter: brightness(.6);
+          filter: brightness(.6);
 }
 
-.btn.pressed {
+.btn.dark:active .btn__mask, .btn.dark.pressed .btn__mask {
+  -webkit-filter: brightness(.5);
+          filter: brightness(.5);
+}
+
+.btn.pressed, .btn:active {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-}
-
-.btn:active {
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25)
 }
 
 .btn.tall {
@@ -96,11 +101,6 @@ body {
 .btn.square {
   border: none;
   margin-left: 5px;
-}
-
-.btn.square.pressed {
-  -webkit-filter: brightness(.7);
-          filter: brightness(.7);
 }
 
 .btn.square:first-child {
@@ -129,6 +129,10 @@ body {
   height: 100%;
   overflow: hidden;
   border-radius: 1337px;
+
+  transition: -webkit-filter var(--smooth);
+  transition: filter var(--smooth);
+  transition: filter var(--smooth), -webkit-filter var(--smooth);
 }
 
 .btn:active .btn__inner {
